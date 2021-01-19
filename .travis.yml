@@ -9,3 +9,6 @@ before_install:
 
 script:
   - docker run -e CI=true arwalh/docker-react npm run test
+deploy:
+  provider: elasticbeanstalk
+  region: us-west-2
