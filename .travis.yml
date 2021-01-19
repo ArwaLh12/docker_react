@@ -1,0 +1,11 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t arwalh/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true arwalh/docker-react npm run test
